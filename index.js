@@ -1,8 +1,8 @@
-const XPTN = 'Ahsan 1.0.1'; // Nama Bot Whatsapp
+const XPTN = 'Ahsan-v1.1'; // Nama Bot Whatsapp
 const instagram = 'https://instagram.com/muh_ahsan1999'; // Nama Instagramlu cok
-const nomer = 'https://Wa.me/+6289655478810'; // Nomor whatsapplu cok
+const nomer = 'https://Wa.me/+628515756434'; // Nomor whatsapplu cok
 const aktif = 'Tergantung jaringan dan donasi'; // Kapan bot lu aktif
-const groupwa = 'https://chat.whatsapp.com/GDdd0I3WlF5LnMVifmS7rN'; // OFFICIAL GRUP LU 1
+const groupwa = 'https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw'; // OFFICIAL GRUP LU 1
 const youtube = 'https://www.youtu.be/b8qKh8QFGBU'; // OFFICIAL GRUP LU 2
 //
 const qrcode = require("qrcode-terminal");
