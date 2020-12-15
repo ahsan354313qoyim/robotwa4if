@@ -3,7 +3,7 @@ const instagram = 'https://instagram.com/muh_ahsan1999'; // Nama Instagramlu cok
 const nomer = 'https://Wa.me/+6285157566434'; // Nomor whatsapplu cok
 const aktif = 'Tergantung Jaringan dan Donasi'; // Kapan bot lu aktif
 //const groupwa = 'https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw'; // OFFICIAL GRUP LU 1
-const youtube = 'https://www.youtu.be/b8qKh8QFGBU'; // OFFICIAL GRUP LU 2
+const youtube = 'https://youtu.be/b8qKh8QFGBU'; // OFFICIAL GRUP LU 2
 //
 const qrcode = require("qrcode-terminal");
 const moment = require("moment");
