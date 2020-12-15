@@ -1,8 +1,8 @@
-const XPTN = 'Ahsan A.1'; // Nama Bot Whatsapp
+const XPTN = 'Ahsan-IND'; // Nama Bot Whatsapp
 const instagram = 'https://instagram.com/muh_ahsan1999'; // Nama Instagramlu cok
-const nomer = 'https://Wa.me/+628515756434'; // Nomor whatsapplu cok
-const aktif = 'Tergantung jaringan dan Donasi'; // Kapan bot lu aktif
-const groupwa = 'https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw'; // OFFICIAL GRUP LU 1
+const nomer = 'https://Wa.me/+6285157566434'; // Nomor whatsapplu cok
+const aktif = 'Tergantung Jaringan dan Donasi'; // Kapan bot lu aktif
+//const groupwa = 'https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw'; // OFFICIAL GRUP LU 1
 const youtube = 'https://www.youtu.be/b8qKh8QFGBU'; // OFFICIAL GRUP LU 2
 //
 const qrcode = require("qrcode-terminal");
@@ -146,7 +146,7 @@ else if (text == 'Asu'){
 conn.sendMessage(id, 'Lu Asw' ,MessageType.text);
 }
 else if (text == '.owner'){
-conn.sendMessage(id, 'Owner XP-TN wa.me/+6285157566434' ,MessageType.text);
+conn.sendMessage(id, 'Owner *Ahsan Adinul* wa.me/+6285157566434' ,MessageType.text);
 }
 else if (text == 'bangsat'){
 conn.sendMessage(id, 'toxic terdeteksi' ,MessageType.text);
@@ -209,14 +209,14 @@ else if (text == 'Cuy'){
 conn.sendMessage(id, 'Ya?, Ketik .help/.info/.donasi Contoh .help' ,MessageType.text);
 }
 else if (text == '.frendsowner'){
-conn.sendMessage(id, 'kawan1 iskandar wa.me/+6285157566434' ,MessageType.text);
+conn.sendMessage(id, 'wa.me/+6285157566434' ,MessageType.text);
 }
 else if (text == '.coowner'){
-conn.sendMessage(id, 'kawan2 testing script wa.me/+6285157566434' ,MessageType.text);
+conn.sendMessage(id, 'wa.me/+6285157566434' ,MessageType.text);
 }
-else if (text == '.groupbot'){
-conn.sendMessage(id, 'group bot whatsapp https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw' ,MessageType.text);
-}
+//else if (text == '.groupbot'){
+//conn.sendMessage(id, 'group bot whatsapp https://chat.whatsapp.com/KIAPXwylvWyHxnMKwtc6fw' ,MessageType.text);
+//}
 else if (text == '.tools1'){
 conn.sendMessage(id, ' *Menampilkan Fitur tools1!!!* ' ,MessageType.text);
 }
@@ -867,7 +867,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp.xp(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -904,7 +904,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp1.xp1(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -941,7 +941,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp2.xp2(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -978,7 +978,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp3.xp3(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1015,7 +1015,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp4.xp4(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1052,7 +1052,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp5.xp5(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1089,7 +1089,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp6.xp6(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1126,7 +1126,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, donate.donate(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1163,7 +1163,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, donate.donate(id, XPTN, corohelp, tampilTanggal, tampilWaktu, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1200,7 +1200,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, donate.donate(id, XPTN, corohelp, tampilTanggal, tampilWaktu, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1237,7 +1237,7 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, donate.donate(id, XPTN, corohelp, tampilTanggal, tampilWaktu, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
@@ -1274,16 +1274,16 @@ switch(bulan) {
  case 10: bulan = "November"; break;
  case 11: bulan = "Desember"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, info.info(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
 else if (text == '.foto'){
 conn.sendMessage(id, 'kirim .foto cewek/cowok\n\nContoh: .foto cewek' ,MessageType.text);
 }
-else if (text == '.help'){
-conn.sendMessage(id, 'Thanks Telah Menggunakan BOT *Ahsan A.1* , Follow Instagram Mimin Yah😻 : https://instagram.com/@muh_ahsan1999' ,MessageType.text);
-}
+//else if (text == '.help'){
+//conn.sendMessage(id, 'Thanks Telah Menggunakan BOT *Ahsan A.1* , Follow Instagram Mimin Yah😻 : https://instagram.com/@muh_ahsan1999' ,MessageType.text);
+//}
    if (messageType == 'imageMessage')
    {
       let caption = imageMessage.caption.toLocaleLowerCase()
