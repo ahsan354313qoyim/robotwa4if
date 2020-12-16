@@ -24,6 +24,7 @@ const xp3 = require("./lib/xp3.js");
 const xp4 = require("./lib/xp4.js");
 const xp5 = require("./lib/xp5.js");
 const xp6 = require("./lib/xp6.js");
+const speed = require('performance-now');
 const readTextInImage = require('./lib/ocr')
 
 //
@@ -1769,6 +1770,20 @@ var gh = text.split(".gltext ")[1];
         })
     })
 }
+if (text.includes('.pornhub')){
+var porn = text.split(".pornhub ")[1];
+    var text1 = porn.split("|")[0];
+    var text2 = porn.split("|")[1];
+    axios.get(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${text1}&text2=${text2}`).then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, '[ WAIT ] Sedang diproses⏳ silahkan tunggu sebentar', MessageType.text, { quoted: m })
+            conn.sendMessage(id, buf, MessageType.image, { quoted: m });
+        })
+    })
+}
 if (text.includes('.gaming2')){
   var teks = text.replace(/.gaming2 /, '')
     axios.get(`https://docs-jojo.herokuapp.com/api/gaming?text=${teks}`).then((res) => {
@@ -1922,6 +1937,31 @@ axios.get(`https://st4rz.herokuapp.com/api/yta2?url=${teks}`).then((res) => {
     let hasil = `Audio telah tersedia pada link di bawah, silahkan klik link dan download hasilnya\n👇👇👇👇👇👇👇👇👇\n\nJudul : ${res.data.title}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
+}
+	if (text.includes('/igstalk')){
+  var teks = text.replace(/.igstalk /, '')
+    axios.get('https://arugaz.herokuapp.com/api/stalk?username='+teks)
+    .then((res) => {
+      imageToBase64(res.data.Profile_pic)
+        .then(
+          (ress) => {
+           let hasil = `User Ditemukan!!\n\n*➸ Nama :* ${res.data.Name}\n*➸ Username :* ${res.data.Username}\n*➸ Followers :* ${res.data.Jumlah_Followers}\n*➸ Mengikuti :* ${res.data.Jumlah_Following}\n*➸ Jumlah Post :* ${res.data.Jumlah_Post}\n*➸ Bio :* ${res.data.Biodata}`;
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image, { caption: hasil, quoted: m })
+        })
+    })
+}
+	if (text.includes('>infogempa')){
+    axios.get(`https://st4rz.herokuapp.com/api/infogempa`).then((res) => {
+      imageToBase64(res.data.map)
+        .then(
+          (ress) => {
+          let hasil = `*INFO GEMPA TERBARU DI INDONESIA*\n\n*➸ Pusat Gempa :* ${res.data.lokasi}\n*➸ Koordinat :* ${res.data.koordinat}\n*➸ Waktu :* ${res.data.waktu}\n*➸ Magnitudo :* ${res.data.magnitude}\n*➸ Kedalaman :* ${res.data.kedalaman}\n*➸ Potensi :* ${res.data.potensi}`;
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, '[ WAIT ] Sedang diproses⏳ silahkan tunggu sebentar', MessageType.text, { quoted: m })
+            conn.sendMessage(id, buf, MessageType.image, { caption: hasil, quoted: m })
+        })
+    })
 }
 if (text.includes('.samehadaku')){
   var teks = text.replace(/.samehadaku /, '')
