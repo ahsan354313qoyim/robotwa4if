@@ -24,6 +24,7 @@ const xp3 = require("./lib/xp3.js");
 const xp4 = require("./lib/xp4.js");
 const xp5 = require("./lib/xp5.js");
 const xp6 = require("./lib/xp6.js");
+const xp7 = require("./lib/xp7.js");
 const speed = require('performance-now');
 const readTextInImage = require('./lib/ocr')
 
@@ -305,8 +306,10 @@ axios.get(`https://st4rz.herokuapp.com/api/yta?url=${teks}`).then((res) => {
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
-if (text.includes('.ping2')) {
-    conn.sendMessage(`from, ${processTime}(_Second_, MessageType.text`)
+else if (text == '.speed') {
+const timestamp = speed();
+const latensi = speed() - timestamp
+conn.sendMessage(id, `PONG!!\nSpeed: ${latensi.toFixed(4)} _Second_`, MessageType.text, {quoted: m})
 }
 if (text.includes('.texthunder')){
   var teks = text.replace(/.texthunder /, '')
@@ -479,6 +482,11 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
     let hasil = `[${ket}]   ${res.data.acak.ar.teks}\n\n${res.data.acak.id.teks}(QS.${res.data.surat.nama}, Ayat ${ket})`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
+}
+else if (text == '~ping2') {
+const timestamp = speed();
+const latensi = speed() - timestamp
+conn.sendMessage(id, `Speed: ${latensi.toFixed(4)} _Second_`, MessageType.text, { quoted: m})
 }
 if (text.includes(".setname")){
 const teks = text.replace(/.setname /, "")
@@ -664,6 +672,14 @@ const teks = text.replace(/.bucin /, "")
 axios.get(`https://arugaz.herokuapp.com/api/howbucins`).then((res) => {
 	conn.sendMessage(id, '[WAIT] Proses...❗', MessageType.text)
     let hasil = ` _${res.data.desc}_ `;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+if (text.includes(".neolast")){
+const teks = text.replace(/.neolast /, "")
+axios.get(`http://enznoire.herokuapp.com/neolatest`).then((res) => {
+	conn.sendMessage(id, '[WAIT] Proses...❗', MessageType.text)
+    let hasil = `_${res.data.creator}_ \n _${res.data.date}_ \n _${res.data.title}_ \n _${res.data.thumb}_`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
@@ -1093,6 +1109,43 @@ switch(bulan) {
 var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, xp6.xp6(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
+}
+if (text == '.menu7'){
+const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
+var date = new Date();
+var tahun = date.getFullYear();
+var bulan = date.getMonth();
+var tanggal = date.getDate();
+var hari = date.getDay();
+var jam = date.getHours();
+var menit = date.getMinutes();
+var detik = date.getSeconds();
+switch(hari) {
+ case 0: hari = "Minggu"; break;
+ case 1: hari = "Senin"; break;
+ case 2: hari = "Selasa"; break;
+ case 3: hari = "Rabu"; break;
+ case 4: hari = "Kamis"; break;
+ case 5: hari = "Jum'at"; break;
+ case 6: hari = "Sabtu"; break;
+}
+switch(bulan) {
+ case 0: bulan = "Januari"; break;
+ case 1: bulan = "Februari"; break;
+ case 2: bulan = "Maret"; break;
+ case 3: bulan = "April"; break;
+ case 4: bulan = "Mei"; break;
+ case 5: bulan = "Juni"; break;
+ case 6: bulan = "Juli"; break;
+ case 7: bulan = "Agustus"; break;
+ case 8: bulan = "September"; break;
+ case 9: bulan = "Oktober"; break;
+ case 10: bulan = "November"; break;
+ case 11: bulan = "Desember"; break;
+}
+var tampilTanggal = "DATE: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
+conn.sendMessage(id, xp7.xp6(id, XPTN, corohelp, tampilTanggal, tampilWaktu, instagram, nomer, aktif, groupwa, youtube) ,MessageType.text);
 }
 else if (text == '.donate'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
@@ -1742,6 +1795,17 @@ axios.get(`https://mhankbarbars.herokuapp.com/api/cuaca?q=${teks}&apiKey=N2Ws9kp
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
+if (text.includes('.loli2')){
+  var teks = text.replace(/.loli2 /, '')
+    axios.get(`https://alfians-api.herokuapp.com/api/randomloli`).then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}
 if (text.includes(".renungan")){
 const teks = text.replace(/.renungan /, "")
 axios.get(`https://docs-jojo.herokuapp.com/api/renungan`).then((res) => {
@@ -1938,7 +2002,7 @@ axios.get(`https://st4rz.herokuapp.com/api/yta2?url=${teks}`).then((res) => {
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
-	if (text.includes('/igstalk')){
+	if (text.includes('.igstalk')){
   var teks = text.replace(/.igstalk /, '')
     axios.get('https://arugaz.herokuapp.com/api/stalk?username='+teks)
     .then((res) => {
@@ -1951,7 +2015,7 @@ axios.get(`https://st4rz.herokuapp.com/api/yta2?url=${teks}`).then((res) => {
         })
     })
 }
-	if (text.includes('>infogempa')){
+	if (text.includes('.infogempa')){
     axios.get(`https://st4rz.herokuapp.com/api/infogempa`).then((res) => {
       imageToBase64(res.data.map)
         .then(
@@ -2010,6 +2074,26 @@ axios.get(`https://st4rz.herokuapp.com/api/ytv2?url=${teks}`).then((res) => {
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
+else if (text == '.officialbot'){
+conn.sendMessage(id, '➡ Group1 : https://bit.ly/2JpM3vU\n➡ Group2 : https://bit.ly/37xxNto' ,MessageType.text);
+}
+     if (messageType == 'imageMessage')
+   {
+       let caption = imageMessage.caption.toLocaleLowerCase()
+       if (caption == '.ocr')
+       {
+           const img = await conn.downloadAndSaveMediaMessage(m)
+           readTextInImage(img)
+               .then(data => {
+                   console.log(data)
+                   conn.sendMessage(id, '[❗] SEDANG DIPROSES', MessageType.text)
+                   conn.sendMessage(id, `${data}\n*NI ANJIM🗿*`, MessageType.text);
+               })
+               .catch(err => {
+                   console.log(err)
+               })
+       }
+   }
 if (text.includes(".ping")){
 const teks = text.replace(/.ping /, "")
 axios.get(`https://api.banghasan.com/domain/nping/${teks}`).then((res) => {
@@ -2027,6 +2111,18 @@ if (text.includes('.ttp')){
             conn.sendMessage(id, buf, MessageType.image)
         })
     })
+}
+else if (text == '.hello1'){
+let hasil = fs.readFileSync('mp3/' + 'PTT' + '.wav')
+ conn.sendMessage(id, hasil, MessageType.audio, { quoted: m } )
+}
+if (text.includes('bot')) {
+ var nomor = m.participant
+ const options = {
+       text: `apa manggil manggil tinggal ketik .help @${nomor.split("@s.whatsapp.net")[0]}, Ketik >help untuk menampilkan perintah yaa`,
+       contextInfo: { mentionedJid: [nomor] }
+ }
+ conn.sendMessage(id, options, MessageType.text, { quoted: m })
 }
 if (text.includes(".alay")){
 	const alay = text.split(".alay")[1]
